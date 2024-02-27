@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Room } from './Room';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,15 +9,15 @@ import { Injectable } from '@angular/core';
 export class RoomService {
   constructor(private http: HttpClient) {}
 
-  getRooms() {
-    return this.http.get('/api/rooms');
+  getRooms(): Observable<Room[]> {
+    return this.http.get<Room[]>('/api/rooms');
   }
 
-  addRooms(obj: any) {
-    return this.http.post('api/rooms', obj);
+  addRooms(room: Room) {
+    return this.http.post('api/rooms', room);
   }
 
-  deleteRoom(id: number) {
+  deleteRoom(id: string) {
     return this.http.delete(`api/rooms/${id}`);
   }
 }

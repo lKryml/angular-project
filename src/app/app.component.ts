@@ -8,7 +8,7 @@ import { RoomService } from './room.service';
 export class AppComponent {
   title = 'angular-project';
 
-  constructor(private roomService: RoomService) {}
+  constructor() {}
   // this.roomService
   //     .addRooms({
   //       roomNumber: 1,

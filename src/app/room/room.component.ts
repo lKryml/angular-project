@@ -7,10 +7,11 @@ import { RoomService } from '../room.service';
   styleUrls: ['./room.component.scss'],
 })
 export class RoomComponent implements OnInit {
-  rooms: any;
+  rooms: Room[];
   constructor(private roomService: RoomService) {}
 
-  deleteRoom(id: any) {
+  deleteRoom(id: string) {
+    if (!id) return;
     this.roomService.deleteRoom(id).subscribe((data) => {
       console.log(data);
     });
