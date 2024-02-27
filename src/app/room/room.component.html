@@ -1,0 +1,20 @@
+<div class="room-container">
+  <div class="room-card" *ngFor="let room of rooms">
+    <img class="room-image" src="{{ room.photos }}" />
+
+    <div class="text-container">
+      <div class="text-container2">
+        <p class="room-type">
+          {{ room.roomType }}
+        </p>
+        <span class="room-amenities">{{ room.amenities }}</span>
+        <p class="price">${{ room.price }}</p>
+        <p class="rating">{{ room.rating }} Stars</p>
+      </div>
+      <button class="edit-button">Edit</button>
+      <button class="delete-button" (click)="deleteRoom(room.roomNumber)">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>

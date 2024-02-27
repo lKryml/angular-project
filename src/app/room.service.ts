@@ -10,4 +10,12 @@ export class RoomService {
   getRooms() {
     return this.http.get('/api/rooms');
   }
+
+  addRooms(obj: any) {
+    return this.http.post('api/rooms', obj);
+  }
+
+  deleteRoom(id: number) {
+    return this.http.delete(`api/rooms/${id}`);
+  }
 }
