@@ -11,7 +11,7 @@
         <p class="price">${{ room.price }}</p>
         <p class="rating">{{ room.rating }} Stars</p>
       </div>
-      <button class="edit-button">Edit</button>
+      <button class="edit-button" (click)="createUser(roomObj)">Edit</button>
       <button class="delete-button" (click)="deleteRoom(room.roomNumber)">
         Delete
       </button>

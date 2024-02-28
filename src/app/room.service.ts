@@ -17,7 +17,7 @@ export class RoomService {
     return this.http.post('api/rooms', room);
   }
 
-  deleteRoom(id: string) {
-    return this.http.delete(`api/rooms/${id}`);
+  deleteRoom(id: string): Observable<Room[]> {
+    return this.http.delete<Room[]>(`api/rooms/${id}`);
   }
 }
